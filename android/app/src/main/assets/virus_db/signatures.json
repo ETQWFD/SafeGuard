@@ -1,0 +1,17 @@
+{
+  "version": "2026.09.19.001",
+  "updated": "2026-09-19T10:00:00Z",
+  "total": 1,
+  "entries": [
+    {
+      "sha256": "275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f",
+      "md5": "44d88612fea8a8f36de82e1278abb02f",
+      "name": "EICAR-Test-File",
+      "level": 5,
+      "type": "test",
+      "family": "EICAR",
+      "source": "official-test",
+      "first_seen": "2026-09-19"
+    }
+  ]
+}
