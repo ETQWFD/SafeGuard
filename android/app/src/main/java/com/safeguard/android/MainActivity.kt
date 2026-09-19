@@ -52,20 +52,35 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        Thread.setDefaultUncaughtExceptionHandler { _, e ->
+            android.util.Log.e("SafeGuard", "crash", e)
+        }
+        try {
+            setContentView(R.layout.activity_main)
 
-        db = VirusDb(this)
-        db.load()
-        scanner = Scanner(db)
-        vt = VtClient(this)
-        quarantine = Quarantine(this)
-        whitelist = Whitelist(this)
+            db = VirusDb(this)
+            db.load()
+            scanner = Scanner(db)
+            vt = VtClient(this)
+            quarantine = Quarantine(this)
+            whitelist = Whitelist(this)
 
-        bindViews()
-        setupTabs()
-        setupActions()
-        showTab(pageScan, tabScan)
-        refreshStatus()
+            bindViews()
+            setupTabs()
+            setupActions()
+            showTab(pageScan, tabScan)
+            refreshStatus()
+        } catch (e: Throwable) {
+            android.util.Log.e("SafeGuard", "init failed", e)
+            setContentView(android.widget.LinearLayout(this).apply {
+                orientation = android.widget.LinearLayout.VERTICAL
+                addView(android.widget.TextView(this@MainActivity).apply {
+                    text = "SafeGuard 启动异常：${e.message}\n请重试或反馈。"
+                    setPadding(48, 96, 48, 48)
+                    textSize = 16f
+                })
+            })
+        }
     }
 
     private fun bindViews() {

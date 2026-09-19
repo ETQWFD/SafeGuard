@@ -3,7 +3,7 @@ ui/widgets/sidebar.py - 左侧导航菜单
 """
 from __future__ import annotations
 
-from PyQt6.QtCore import Qt, pyqtSignal
+from PyQt6.QtCore import Qt, QSize, pyqtSignal
 from PyQt6.QtWidgets import QListWidget, QListWidgetItem
 
 
@@ -24,7 +24,7 @@ class Sidebar(QListWidget):
         self._items = entries
         for icon, key in entries:
             item = QListWidgetItem(f"{icon}  {key}")
-            item.setSizeHint(item.sizeHint().height() + 26, 46)
+            item.setSizeHint(QSize(180, 46))
             self.addItem(item)
 
     def retranslate(self, keys: list[str]) -> None:
