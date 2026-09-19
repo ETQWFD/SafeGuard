@@ -1,0 +1,9 @@
+{
+  "github_owner": "REPLACE_AFTER_REPO_CREATE",
+  "github_repo": "SafeGuard",
+  "github_branch": "main",
+  "raw_base": "https://raw.githubusercontent.com/REPLACE_AFTER_REPO_CREATE/SafeGuard/main",
+  "api_base": "https://api.github.com/repos/REPLACE_AFTER_REPO_CREATE/SafeGuard",
+  "website_url": "https://REPLACE_AFTER_REPO_CREATE.github.io/SafeGuard/",
+  "current_version": "1.5.0"
+}

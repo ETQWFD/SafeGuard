@@ -1,0 +1,13 @@
+{
+  "language": "zh_CN",
+  "theme": "dark",
+  "accent": "#4A90E2",
+  "auto_start": false,
+  "realtime_monitor": true,
+  "usb_monitor": true,
+  "registry_monitor": false,
+  "scan_max_depth": 3,
+  "skip_whitelist": true,
+  "threat_action": "quarantine",
+  "last_scan": null
+}

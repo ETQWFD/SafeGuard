@@ -1,0 +1,18 @@
+{
+  "version": "2026.09.19.001",
+  "updated": "2026-09-19T10:00:00Z",
+  "total": 1,
+  "_comment": "初始库仅含 EICAR 官方测试串（唯一允许的示例数据）。真实样本请用 scripts/ 下收集脚本从 VirusTotal / MalwareBazaar 拉取后 merge_db.py 合并。",
+  "entries": [
+    {
+      "sha256": "275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f",
+      "md5": "44d88612fea8a8f36de82e1278abb02f",
+      "name": "EICAR-Test-File",
+      "level": 5,
+      "type": "test",
+      "family": "EICAR",
+      "source": "official-test",
+      "first_seen": "2026-09-19"
+    }
+  ]
+}

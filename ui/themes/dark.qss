@@ -1,0 +1,178 @@
+/* SafeGuard 暗黑主题 - {accent} 为主题色占位符 */
+
+* {
+    font-family: "Segoe UI", "Microsoft YaHei", "PingFang SC", sans-serif;
+    font-size: 13px;
+    color: #E5E7EB;
+}
+
+QWidget {
+    background: transparent;
+}
+
+#windowContainer {
+    background: #0F1524;
+    border: 1px solid #1E293B;
+    border-radius: 16px;
+}
+
+/* ------- 标题栏 ------- */
+#titleBar {
+    background: #111A2E;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    border-bottom: 1px solid #1E293B;
+}
+#titleLogo { font-size: 18px; }
+#titleText {
+    font-size: 14px;
+    font-weight: 600;
+    color: {accent};
+}
+#titleBtnMin, #titleBtnClose {
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #94A3B8;
+}
+#titleBtnClose:hover { background: rgba(239, 68, 68, 0.2); color: #F87171; }
+#titleBtnMin:hover { background: #1E293B; }
+
+/* ------- 侧边栏 ------- */
+#sidebar {
+    background: #111A2E;
+    border-right: 1px solid #1E293B;
+    border-bottom-left-radius: 16px;
+    padding: 12px 8px;
+    outline: none;
+}
+#sidebar::item {
+    border-radius: 10px;
+    padding-left: 14px;
+    height: 44px;
+    color: #94A3B8;
+}
+#sidebar::item:hover { background: #1B2740; color: {accent}; }
+#sidebar::item:selected {
+    background: rgba({accent_rgb}, 0.18);
+    color: {accent};
+    font-weight: 600;
+    border-left: 3px solid {accent};
+}
+
+/* ------- 页面标题 ------- */
+#pageTitle { font-size: 20px; font-weight: 700; color: #F1F5F9; }
+
+/* ------- 卡片 ------- */
+#statusCard, #infoCard, #chartCard {
+    background: #131C31;
+    border: 1px solid #1E293B;
+    border-radius: 14px;
+}
+#statusIcon { font-size: 34px; }
+#statusText { font-size: 17px; font-weight: 600; color: {accent}; }
+#cardTitle { font-size: 14px; font-weight: 600; color: #F1F5F9; }
+#cardBody { font-size: 12px; color: #94A3B8; }
+
+/* ------- 按钮 ------- */
+QPushButton {
+    border-radius: 10px;
+    padding: 6px 16px;
+    background: #1E293B;
+    border: none;
+    color: #CBD5E1;
+    font-weight: 600;
+}
+QPushButton:hover { background: #29364C; }
+#primaryBtn { background: {accent}; color: #FFFFFF; }
+#primaryBtn:hover { background: rgba({accent_rgb}, 0.8); }
+#dangerBtn { background: rgba(239, 68, 68, 0.18); color: #F87171; }
+#dangerBtn:hover { background: rgba(239, 68, 68, 0.3); }
+#ghostBtn { background: transparent; border: 1px solid #334155; color: #94A3B8; }
+#ghostBtn:hover { border-color: {accent}; color: {accent}; }
+
+/* ------- 进度条 ------- */
+QProgressBar {
+    background: #1E293B;
+    border: none;
+    border-radius: 8px;
+    height: 14px;
+    text-align: center;
+    font-size: 10px;
+    color: #CBD5E1;
+}
+QProgressBar::chunk {
+    background: {accent};
+    border-radius: 8px;
+}
+
+/* ------- 表格 ------- */
+#resultTable {
+    background: #131C31;
+    border: 1px solid #1E293B;
+    border-radius: 12px;
+    gridline-color: #1E293B;
+    selection-background-color: rgba({accent_rgb}, 0.2);
+    selection-color: #F1F5F9;
+}
+QHeaderView::section {
+    background: #111A2E;
+    border: none;
+    border-bottom: 1px solid #1E293B;
+    padding: 8px;
+    font-weight: 600;
+    color: #CBD5E1;
+}
+
+/* ------- 事件列表 ------- */
+#eventList {
+    background: #131C31;
+    border: 1px solid #1E293B;
+    border-radius: 12px;
+    padding: 6px;
+}
+#eventList::item { padding: 6px 8px; border-radius: 8px; }
+#eventList::item:selected { background: rgba({accent_rgb}, 0.18); }
+
+/* ------- 输入与下拉 ------- */
+QLineEdit, QComboBox {
+    background: #0F1524;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 6px 10px;
+    color: #E5E7EB;
+    selection-background-color: {accent};
+}
+QLineEdit:focus, QComboBox:focus { border-color: {accent}; }
+QComboBox::drop-down { border: none; width: 22px; }
+QComboBox QAbstractItemView {
+    background: #131C31;
+    border: 1px solid #1E293B;
+    selection-background-color: rgba({accent_rgb}, 0.2);
+    selection-color: #F1F5F9;
+}
+
+/* ------- 威胁弹窗 ------- */
+#threatTitle { font-size: 16px; font-weight: 700; color: #F87171; }
+#threatInfo { background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 12px; }
+
+/* ------- Toast ------- */
+#toast {
+    background: rgba(226, 232, 240, 0.95);
+    color: #0F1524;
+    border-radius: 10px;
+    padding: 10px 18px;
+    font-size: 13px;
+}
+
+QCheckBox { spacing: 8px; }
+QCheckBox::indicator {
+    width: 18px; height: 18px;
+    border: 2px solid #334155;
+    border-radius: 5px;
+    background: #0F1524;
+}
+QCheckBox::indicator:checked { background: {accent}; border-color: {accent}; }
+
+#aboutLogo { font-size: 26px; font-weight: 800; color: {accent}; }

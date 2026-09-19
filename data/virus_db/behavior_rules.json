@@ -1,0 +1,51 @@
+{
+  "_comment": "行为规则：由引擎在实时监控/扫描时真实判定，规则可自由增删改。",
+  "rules": [
+    {
+      "id": "REG_RUN_PERSIST",
+      "name": "注册表启动项持久化",
+      "level": 4,
+      "trigger": "registry_write",
+      "path_pattern": "...\\Run\\*",
+      "file_pattern": "",
+      "action": "alert"
+    },
+    {
+      "id": "USB_AUTORUN",
+      "name": "U盘autorun",
+      "level": 5,
+      "trigger": "usb_insert",
+      "path_pattern": "",
+      "file_pattern": "autorun.inf",
+      "action": "block"
+    },
+    {
+      "id": "MASS_FILE_ENCRYPT",
+      "name": "批量加密(勒索)",
+      "level": 5,
+      "trigger": "file_write",
+      "path_pattern": "",
+      "file_pattern": "",
+      "threshold": { "count": 50, "window_sec": 10 },
+      "action": "block"
+    },
+    {
+      "id": "SELF_COPY_SYSTEM",
+      "name": "自复制到系统目录",
+      "level": 4,
+      "trigger": "file_copy",
+      "path_pattern": "C:\\Windows\\*",
+      "file_pattern": "",
+      "action": "alert"
+    },
+    {
+      "id": "DISABLE_DEFENDER",
+      "name": "关闭Defender",
+      "level": 5,
+      "trigger": "registry_write",
+      "path_pattern": "...Defender*",
+      "file_pattern": "",
+      "action": "block"
+    }
+  ]
+}

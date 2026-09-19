@@ -1,0 +1,5 @@
+{
+  "virus_total": "",
+  "malwarebazaar": "",
+  "_comment": "在 https://www.virustotal.com/gui/join-us 免费注册获取 VT v3 API Key 后填入 virus_total 字段。留空则云端查询返回 no_api_key，本地查杀不受影响。"
+}

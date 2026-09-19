@@ -1,0 +1,35 @@
+1
+00:00:00,000 --> 00:00:12,000
+Every click, every USB, every download hides unseen threats.
+
+2
+00:00:12,000 --> 00:00:35,000
+Ransomware, USB malware, privacy leaks — traditional AV is always late.
+
+3
+00:00:35,000 --> 00:01:00,000
+SafeGuard — a real antivirus engine on your desktop.
+
+4
+00:01:00,000 --> 00:01:45,000
+ClamAV · YARA · VirusTotal — triple-engine real protection.
+
+5
+00:01:45,000 --> 00:02:25,000
+Auto-scan USB · Real-time block · AES-256 quarantine.
+
+6
+00:02:25,000 --> 00:02:55,000
+4 themes · 3 languages · Light & Dark mode.
+
+7
+00:02:55,000 --> 00:03:30,000
+C++ engine · Java intel · Python UI · Local-first.
+
+8
+00:03:30,000 --> 00:03:50,000
+Digital protection for everyone.
+
+9
+00:03:50,000 --> 00:04:00,000
+github.com/<owner>/SafeGuard · MIT License

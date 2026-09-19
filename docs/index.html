@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SafeGuard 安全卫士 — 真实杀毒，轻量守护</title>
+<meta name="description" content="SafeGuard：C++ 真实杀毒引擎 + 云端情报 + 隐私优先的桌面安全卫士。开源、免费、MIT 协议。">
+<style>
+  :root{
+    --primary:#4A90E2; --pink:#FFB7C5; --green:#7CB342; --orange:#FF9800;
+    --bg:#0F1524; --card:#131C31; --text:#E5E7EB; --muted:#94A3B8;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+       background:var(--bg); color:var(--text); line-height:1.7;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  header{position:sticky;top:0;background:rgba(15,21,36,.85);backdrop-filter:blur(12px);
+         border-bottom:1px solid rgba(255,255,255,.06);z-index:10}
+  nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px}
+  .logo .dot{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--primary),#2E5FA3);
+             display:grid;place-items:center;font-size:14px}
+  nav a{color:var(--muted);text-decoration:none;margin-left:24px;font-size:14px}
+  nav a:hover{color:var(--text)}
+  .btn{display:inline-block;padding:10px 22px;border-radius:10px;font-size:14px;text-decoration:none;
+       transition:transform .15s,box-shadow .15s}
+  .btn-primary{background:var(--primary);color:#fff}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(74,144,226,.4)}
+  .btn-ghost{border:1px solid rgba(255,255,255,.15);color:var(--text)}
+  .hero{padding:90px 0 70px;text-align:center}
+  .hero h1{font-size:48px;font-weight:800;line-height:1.2;margin-bottom:20px}
+  .hero h1 span{background:linear-gradient(90deg,var(--primary),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p{color:var(--muted);font-size:18px;max-width:640px;margin:0 auto 36px}
+  .hero .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .badges{display:flex;gap:10px;justify-content:center;margin-top:28px;flex-wrap:wrap}
+  .badge{font-size:12px;padding:4px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.1);color:var(--muted)}
+  section{padding:70px 0}
+  h2{font-size:32px;font-weight:700;text-align:center;margin-bottom:12px}
+  .sub{text-align:center;color:var(--muted);margin-bottom:48px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+  .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:28px}
+  .card .ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-size:22px;margin-bottom:16px}
+  .card h3{font-size:18px;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:14px}
+  .arch{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:40px}
+  .arch .layer{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:18px 28px;text-align:center}
+  .arch .layer b{display:block;font-size:15px}
+  .arch .layer small{color:var(--muted);font-size:12px}
+  footer{border-top:1px solid rgba(255,255,255,.06);padding:40px 0;text-align:center;color:var(--muted);font-size:14px}
+  footer a{color:var(--primary);text-decoration:none}
+  .swatches{display:flex;gap:8px;justify-content:center;margin-top:16px}
+  .sw{width:18px;height:18px;border-radius:50%}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+  <div class="logo"><span class="dot">🛡</span> SafeGuard</div>
+  <div>
+    <a href="#features">功能</a><a href="#arch">架构</a><a href="#download">下载</a>
+    <a class="btn btn-primary" href="__REPO_URL__/releases" style="margin-left:24px">GitHub</a>
+  </div>
+</nav></div></header>
+
+<div class="wrap">
+  <div class="hero">
+    <h1>真实杀毒，<span>轻量守护</span></h1>
+    <p>SafeGuard 把 ClamAV 与 YARA 真实引擎装进桌面：Python 负责界面、C++ 负责查杀、Java 负责情报。本地优先，隐私不出门。开源免费，MIT 协议。</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="__REPO_URL__/releases/latest">下载最新版 v1.5</a>
+      <a class="btn btn-ghost" href="__REPO_URL__">查看源码</a>
+    </div>
+    <div class="badges">
+      <span class="badge">MIT License</span><span class="badge">ClamAV</span>
+      <span class="badge">YARA</span><span class="badge">VirusTotal v3</span>
+      <span class="badge">Windows / Linux / Android</span>
+    </div>
+    <div class="swatches">
+      <span class="sw" style="background:#4A90E2"></span><span class="sw" style="background:#FFB7C5"></span>
+      <span class="sw" style="background:#7CB342"></span><span class="sw" style="background:#FF9800"></span>
+    </div>
+  </div>
+
+  <section id="features">
+    <h2>为什么选 SafeGuard</h2>
+    <p class="sub">不是演示、不是模拟——每一次扫描都是真实引擎在运行</p>
+    <div class="grid">
+      <div class="card"><div class="ic" style="background:rgba(74,144,226,.15)">🔍</div><h3>三重引擎</h3><p>ClamAV 特征库 + YARA 规则 + 本地哈希库，外加 VirusTotal 云端复核，从 EICAR 到真实样本。</p></div>
+      <div class="card"><div class="ic" style="background:rgba(255,183,197,.15)">💾</div><h3>U盘自动扫描</h3><p>插入即扫，autorun.inf 与可疑程序自动拦截，危险还没运行就被拦下。</p></div>
+      <div class="card"><div class="ic" style="background:rgba(124,179,66,.15)">🔒</div><h3>AES-256 隔离区</h3><p>可疑文件加密隔离而非直接删除，任何操作都可回滚，绝不误杀。</p></div>
+      <div class="card"><div class="ic" style="background:rgba(255,152,0,.15)">⚡</div><h3>实时防护</h3><p>文件系统实时监控、注册表启动项监控、可疑进程阻断，多线程扫描不卡界面。</p></div>
+      <div class="card"><div class="ic" style="background:rgba(74,144,226,.15)">🎨</div><h3>个性界面</h3><p>明暗双模式 × 四种主题色 × 中/英/繁三语言，运行时切换，无需重启。</p></div>
+      <div class="card"><div class="ic" style="background:rgba(255,183,197,.15)">📡</div><h3>真实更新</h3><p>病毒库与程序版本通过 GitHub Releases 与本仓库分发，开源透明，无遥测。</p></div>
+    </div>
+  </section>
+
+  <section id="arch">
+    <h2>三层架构</h2>
+    <p class="sub">各司其职，清晰可审计</p>
+    <div class="arch">
+      <div class="layer"><b>Python · PyQt6</b><small>界面 / 交互 / 图表</small></div>
+      <div class="layer"><b>C++ · DLL</b><small>ClamAV / YARA / 哈希 / 监控</small></div>
+      <div class="layer"><b>Java · JAR</b><small>VirusTotal / 情报 / 报告</small></div>
+    </div>
+  </section>
+
+  <section id="download">
+    <h2>下载 v1.5</h2>
+    <p class="sub">Windows / Linux 桌面版，Android 移动端，源码全部开源</p>
+    <div class="cta" style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn-primary" href="__REPO_URL__/releases/download/v1.5.0/SafeGuard-v1.5.0-windows.zip">Windows 版</a>
+      <a class="btn btn-ghost" href="__REPO_URL__/releases/download/v1.5.0/SafeGuard-v1.5.0-linux.tar.gz">Linux 版</a>
+      <a class="btn btn-ghost" href="__REPO_URL__/releases/download/v1.5.0/SafeGuard-v1.5.0-android.apk">Android APK</a>
+      <a class="btn btn-ghost" href="__REPO_URL__/archive/refs/tags/v1.5.0.zip">源码 zip</a>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>SafeGuard 安全卫士 · MIT License · Copyright © 2026</p>
+    <p style="margin-top:8px">仓库：<a href="__REPO_URL__">__REPO_URL__</a> · 官网：<a href="__WEBSITE_URL__">__WEBSITE_URL__</a></p>
+  </div>
+</footer>
+</body>
+</html>

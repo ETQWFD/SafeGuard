@@ -1,0 +1,7 @@
+{
+  "theme_usage": { "light": 0, "dark": 0 },
+  "mode_switches": { "light_to_dark": 0, "dark_to_light": 0 },
+  "lang_usage": { "zh_CN": 0, "zh_TW": 0, "en_US": 0 },
+  "scans": { "quick": 0, "full": 0, "custom": 0, "files": 0, "threats": 0 },
+  "start_count": 0
+}

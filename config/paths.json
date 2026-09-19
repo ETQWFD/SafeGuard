@@ -1,0 +1,11 @@
+{
+  "clamav_db": "data/clamav",
+  "yara_rules": "data/virus_db/rules.yar",
+  "yara_rules_dir": "data/yara_rules",
+  "json_db": "data/virus_db/signatures.json",
+  "behavior_rules": "data/virus_db/behavior_rules.json",
+  "white_list": "data/white_list.json",
+  "quarantine": "quarantine",
+  "logs": "logs",
+  "reports": "reports"
+}
