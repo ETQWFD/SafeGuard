@@ -54,15 +54,22 @@ class Scanner(private val db: VirusDb) {
         withContext(Dispatchers.IO) {
             val results = mutableListOf<ScanResult>()
             var count = 0
+            val MAX_FILES = 4000            // 最多扫描 4000 个文件，避免扫爆存储
+            val SKIP_DIRS = setOf("dcim", "pictures", "movies", "music", "android",
+                                  ".thumbnails")
             val queue = ArrayDeque<Pair<File, Int>>()
             queue.add(root to 0)
             while (queue.isNotEmpty()) {
                 val (dir, depth) = queue.removeFirst()
                 val children = dir.listFiles() ?: continue
                 for (child in children) {
+                    if (count >= MAX_FILES) return@withContext results
                     if (child.isDirectory) {
-                        if (depth < maxDepth) queue.add(child to depth + 1)
+                        val n = child.name.lowercase()
+                        if (depth < maxDepth && n !in SKIP_DIRS && !child.isHidden)
+                            queue.add(child to depth + 1)
                     } else {
+                        if (child.length() > 60 * 1024 * 1024L) continue
                         count++
                         val r = scanFile(child, vtClient, useCloud)
                         if (r.status != "clean") results.add(r)

@@ -223,11 +223,14 @@ class MainActivity : AppCompatActivity() {
         val results = findViewById<TextView>(R.id.tv_results)
         scanJob = CoroutineScope(Dispatchers.IO).launch {
             val found = scanner.scanDirectory(
-                root, maxDepth = 5,
+                root, maxDepth = 4,
                 onProgress = { count, name ->
-                    runOnUiThread {
-                        progress.progress = count % 100
-                        tv.text = getString(R.string.scanning) + " $count · $name"
+                    // 限速 UI 更新：每 15 个文件或约 300ms 才刷新一次，避免主线程被淹没
+                    if (count % 15 == 0) {
+                        runOnUiThread {
+                            progress.isIndeterminate = false
+                            tv.text = getString(R.string.scanning) + " $count · $name"
+                        }
                     }
                 },
                 vtClient = vt, useCloud = true)
